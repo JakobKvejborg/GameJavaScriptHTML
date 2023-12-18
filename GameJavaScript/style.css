@@ -11,15 +11,28 @@
     border: 1px solid black;
 }
 
-#character {
+#character { /* this is the red block */
     width: 20px;
     height: 50px;
     background-color: red;
     position: relative;
-    top: 150;
+    top: 150px;
+    /* animation: jump 500ms infinite; */
 }
 
-#block {
+.animate { /* creates a new animate class */
+    animation: jump 500ms;
+}    
+
+ @keyframes jump {
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+    
+ }
+
+#block { /* this is the blue block */
     width: 20px;
     height: 20px;
     background-color: blue;
@@ -29,7 +42,7 @@
     animation: block 1s infinite linear; /* infinite keeps the animation running, linear makes the animation smoother */
 }
 
-@keyframes block { /* this creates animation */
+@keyframes block { /* this creates sliding animation */
     0%{left: 480px;}
     100%{left: -40px;}
 
